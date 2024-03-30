@@ -52,7 +52,12 @@ const AboutPage = () => {
             image="/about.png"
             alt="green iguana"
           />
-         
+          <CardContent>
+            
+            <Typography variant="body2" color="text.secondary">
+              Culfest 2023
+            </Typography>
+          </CardContent>
         </CardActionArea>
       </Card>
 
