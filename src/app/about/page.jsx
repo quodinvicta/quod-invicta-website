@@ -18,15 +18,15 @@ const AboutPage = () => {
       </div>
       <h1 className={styles.subtitle}>About The Team</h1>
       <div className={styles.textContainer}>
-          Quod Invicta was founded in 2011 and was named as Invincibles and was rebranded in 2017 as Quod Invicta, Invicta is 'Invincibles' in Latin to keep the history of the team. Our main objective is to make clothing more of a lifestyle than something that is used to cover one’s body through engineering and collaborating with brands to create an awareness of sustainable clothing.
+          Quod Invicta was founded in 2011 and was named as Invincibles and was rebranded in 2017 as Quod Invicta, Invicta is &apos;Invincibles&apos; in Latin to keep the history of the team. Our main objective is to make clothing more of a lifestyle than something that is used to cover one&apos;s body through engineering and collaborating with brands to create an awareness of sustainable clothing.
       </div>
       <h1 className={styles.subtitle}>Achievements</h1>
       <div >
         <ul className={styles.achievements}>
-            <li>Culfest'20 - Champions</li>
-            <li>Ensemble Valhalla'19 - Champions </li>
+            <li>Culfest&apos;20 - Champions</li>
+            <li>Ensemble Valhalla&apos;19 - Champions </li>
             <li>We had participated in various events and fashion shows organized by IIT Guwahati, IIT Kharagpur, NIT Jamshedpur, NIT Rourkela, Xavier School of Management and Tata Steel from 2011-2020.</li>
-            <li>Tanishq's 2020 Valentine's collection was directed and shot by Invicta.</li>
+            <li>Tanishq&apos;s 2020 Valentine&apos;s collection was directed and shot by Invicta.</li>
         </ul>
       </div>
     </div>

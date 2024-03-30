@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useCallback } from "react";
-import { render } from "react-dom";
+
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { photos } from "./photos";
@@ -39,7 +39,7 @@ const PhotoGallery = () => {
           id="panel1-header"
         >
           <div >
-            <h1>Tanishq's 2020 Valentine Collection</h1>
+            <h1>Tanishq&apos;s 2020 Valentine Collection</h1>
           </div>
         </AccordionSummary>
 
@@ -60,7 +60,7 @@ const PhotoGallery = () => {
             ) : null}
           </ModalGateway>
         </AccordionDetails>
-        
+
       </Accordion>
 
     </div>
