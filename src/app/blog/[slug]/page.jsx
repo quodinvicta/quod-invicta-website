@@ -9,7 +9,7 @@ import ScrollToTop from "react-scroll-to-top";
 import moment from 'moment';
 //FETCH DATA WITH API
 const getData = async (slug) => {
-  const res = await fetch(`https://quod-invicta.vercel.app/api/blog/${slug}`);
+  const res = await fetch(`https://quod-invicta.vercel.app/api/blog/${slug}`, {cache: "no-store"});
   if (!res.ok) {
     throw new Error("Something went wrong");
   }
