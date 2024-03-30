@@ -4,7 +4,7 @@ import { getPosts } from "@/lib/data";
 //FETCH DATA WITH API
 
 const getData = async () => {
-  const res = await fetch('https://quod-invicta.vercel.app/api/blog', {next:{revalidate:5}});
+  const res = await fetch('https://quod-invicta.vercel.app/api/blog', {cache: "no-store"});
   if (!res.ok) {
     throw new Error("Something went wrong");
   }
