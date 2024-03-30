@@ -17,9 +17,18 @@ const CTA = () => {
     </div>
     </div>
 
-    <div className={styles.yt}>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Wm311iK9KlE?si=uZOPAyCi1iUCbKb6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+    <div className={styles.videoContainer}>
+  <iframe
+    width="400"
+    height="315"
+    src="https://www.youtube.com/embed/Wm311iK9KlE?si=uZOPAyCi1iUCbKb6"
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  ></iframe>
+</div>
+    
     </div>
   )
 }

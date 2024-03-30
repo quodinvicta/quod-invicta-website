@@ -108,7 +108,7 @@ const CardContainer = styled.div`
   padding: 20px;
   border-radius: 10px;
   display: inline-block;
-  margin-right: 20px;
+  ${'' /* margin-right: 0px; */}
   max-width: 300px;
 `;
 

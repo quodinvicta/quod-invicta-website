@@ -1,16 +1,17 @@
-.container{
+.container {
     display: flex;
     gap: 20px;
-    padding: 10px;
-    flex-direction: row;
-    margin: 25px;
     
+    flex-direction: row;
+    padding: 20px;
+
 }
 
-.title{
+.title {
     font-size: 20px;
 }
-.btn{
+
+.btn {
     padding: 20px;
     min-width: 120px;
     cursor: pointer;
@@ -22,40 +23,80 @@
     color: white;
 }
 
-.info{
+.info {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
+.maxWidth{
+    max-width:500px;
+}
 
-@media (max-width: 1024px){
-    .container{
+
+
+
+@media (max-width: 1024px) {
+    .container {
         flex-direction: column;
         gap: 50px;
         margin: 20px;
         align-items: center;
     }
-    .info{
+
+    .info {
         align-items: center;
-        
+
     }
-    .title{
+
+    .title {
         text-align: center;
     }
 }
-@media (max-width: 768px){
-    .container{
+
+@media (max-width: 600px) {
+    .container {
         flex-direction: column;
         gap: 50px;
         margin: 20px;
     }
-    .info{
+
+    .info {
         align-items: center;
-        
+
     }
-    .title{
+
+    .title {
         text-align: center;
     }
-    
+
+   
+
 }
+
+
+@media (max-width: 350px) {
+    .container {
+        flex-direction: column;
+        gap: 50px;
+        margin: 20px;
+    }
+
+    .info {
+        align-items: center;
+
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .videoContainer iframe{
+        width: 100%;
+    }
+
+} 
+ 
+
+ 
+
