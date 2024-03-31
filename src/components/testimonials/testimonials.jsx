@@ -102,42 +102,80 @@ const AwesomeTestimonial = dynamic(() => import('react-awesome-testimonials'), {
 import React from 'react';
 import Marquee from 'react-fast-marquee';
 import styled from 'styled-components';
+import Carousel from 'react-material-ui-carousel'
+import { Paper, Button } from '@mui/material'
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
+import styles from "./testimonials.module.css"
+// import Swiper core and required modules
+import { Autoplay,Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
-const CardContainer = styled.div`
-  ${'' /* background-color: white; */}
-  padding: 20px;
-  border-radius: 10px;
-  display: inline-block;
-  ${'' /* margin-right: 0px; */}
-  max-width: 300px;
-`;
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-const CardImage = styled.img`
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-`;
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
+// const CardContainer = styled.div`
+//   ${'' /* background-color: white; */}
+//   padding: 20px;
+//   border-radius: 10px;
+//   display: inline-block;
+//   ${'' /* margin-right: 0px; */}
+//   max-width: 300px;
+// `;
 
-const CardTitle = styled.h3`
-  margin-top: 10px;
-  font-size: 1.2rem;
-`;
+// const CardImage = styled.img`
+//   width: 100%;
+//   height: 200px;
+//   object-fit: cover;
+//   border-radius: 10px;
+// `;
 
-const CardContent = styled.p`
-  margin-top: 10px;
-  font-size: 0.9rem;
-`;
+// const CardTitle = styled.h3`
+//   margin-top: 10px;
+//   font-size: 1.2rem;
+// `;
 
-const Card = () => (
-  <CardContainer>
-    <CardImage src="https://via.placeholder.com/300x200" alt="Card Image" />
-    <CardTitle>Card Title</CardTitle>
-    <CardContent>
-      Card content goes here. This is a sample text to demonstrate the content
-      section of the card.
-    </CardContent>
-  </CardContainer>
+// const CardContent = styled.p`
+//   margin-top: 10px;
+//   font-size: 0.9rem;
+// `;
+
+// const Card1 = () => (
+//   <CardContainer>
+//     <CardImage src="https://via.placeholder.com/300x200" alt="Card Image" />
+//     <CardTitle>Card Title</CardTitle>
+//     <CardContent>
+//       Card content goes here. This is a sample text to demonstrate the content
+//       section of the card.
+//     </CardContent>
+//   </CardContainer>
+// );
+const Card2 = () => (
+  <Card sx={{ maxWidth: 345 }}>
+    <CardActionArea>
+      <CardMedia
+        component="img"
+        height="140"
+        image="https://via.placeholder.com/300x200"
+        alt="green iguana"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+        Lorem ipsum
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </Typography>
+      </CardContent>
+    </CardActionArea>
+  </Card>
 );
 
 const GradientMarquee = styled(Marquee)`
@@ -147,13 +185,68 @@ const GradientMarquee = styled(Marquee)`
 `;
 
 const Testimonials = () => (
-  <GradientMarquee gradient={true} gradientColor={['#1F2544']} pauseOnHover={true} speed={50}>
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-  </GradientMarquee>
+  <div className={styles.carousel}>
+
+    {/* <GradientMarquee gradient={true} gradientColor={['#1F2544']} pauseOnHover={true} speed={50}> */}
+
+    {/* <Card2 />
+    <Card2 />
+    <Card2 /> */}
+
+    {/* </GradientMarquee> */}
+
+
+    <Swiper
+      // install Swiper modules
+      modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
+      autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+      breakpoints={{
+        380: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        480: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        540: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 50,
+        },
+      }}
+      spaceBetween={40}
+      slidesPerView={3}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      <SwiperSlide><Card2 /></SwiperSlide>
+      <SwiperSlide><Card2 /></SwiperSlide>
+      <SwiperSlide><Card2 /></SwiperSlide>
+      <SwiperSlide><Card2 /></SwiperSlide>
+      <SwiperSlide><Card2 /></SwiperSlide>
+      <SwiperSlide><Card2 /></SwiperSlide>
+      <SwiperSlide><Card2 /></SwiperSlide>
+    </Swiper>
+
+  </div>
 );
 
 export default Testimonials;

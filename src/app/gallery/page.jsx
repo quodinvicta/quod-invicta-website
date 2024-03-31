@@ -3,7 +3,7 @@ import React, { useState, useCallback } from "react";
 
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
-import { photos } from "./photos";
+import { photos } from "./tanishq";
 import styles from "./photogallery.module.css"
 
 import Accordion from '@mui/material/Accordion';
@@ -12,24 +12,58 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
-
+import { cds23, images } from "./cds23";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
+import WSPGallery from "@/components/WSPGallery/WSPGallery";
 
 const PhotoGallery = () => {
-  const [currentImage, setCurrentImage] = useState(0);
-  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+  // const [currentImage, setCurrentImage] = useState(0);
+  // const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
-  const openLightbox = useCallback((event, { photo, index }) => {
-    setCurrentImage(index);
-    setViewerIsOpen(true);
-  }, []);
+  // const openLightbox = useCallback((event, { photo, index }) => {
+  //   setCurrentImage(index);
+  //   setViewerIsOpen(true);
+  // }, []);
 
-  const closeLightbox = () => {
-    setCurrentImage(0);
-    setViewerIsOpen(false);
-  };
+  // const closeLightbox = () => {
+  //   setCurrentImage(0);
+  //   setViewerIsOpen(false);
+  // };
+
 
   return (
     <div>
+
+      {/* <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"
+        >
+          <div >
+            <h1>CDS &apos;23</h1>
+          </div>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Gallery photos={cds23} onClick={openLightbox} />
+          <ModalGateway>
+            {viewerIsOpen ? (
+              <Modal onClose={closeLightbox}>
+                <Carousel
+                  currentIndex={currentImage}
+                  views={cds23.map(x => ({
+                    ...x,
+                    srcset: x.srcSet,
+                    caption: x.title
+                  }))}
+                />
+              </Modal>
+            ) : null}
+          </ModalGateway>
+        </AccordionDetails>
+      </Accordion>
+
 
       <Accordion>
 
@@ -60,8 +94,35 @@ const PhotoGallery = () => {
             ) : null}
           </ModalGateway>
         </AccordionDetails>
+      </Accordion> */}
 
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"><h1>CDS &apos;23</h1></AccordionSummary>
+        <AccordionDetails>
+          <WSPGallery
+            galleryImages={cds23}
+          />
+        </AccordionDetails>
       </Accordion>
+
+
+
+
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"><h1>Tanishq&apos;s 2020 Valentine Collection</h1></AccordionSummary>
+        <AccordionDetails>
+        <WSPGallery
+        galleryImages={photos}
+      />
+        </AccordionDetails>
+      </Accordion>
+
+      
+
 
     </div>
   );
