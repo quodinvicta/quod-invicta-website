@@ -16,6 +16,29 @@ import { cds23, images } from "./cds23";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import WSPGallery from "@/components/WSPGallery/WSPGallery";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    width: "100%",
+    
+    padding: 20,
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    fontWeight: theme.typography.fontWeightRegular
+  },
+  rectangle: {
+    width: "80%",
+    height: 200,
+    backgroundColor: "blue",
+    marginTop:20
+  }
+}));
+
 
 const PhotoGallery = () => {
   // const [currentImage, setCurrentImage] = useState(0);
@@ -32,8 +55,10 @@ const PhotoGallery = () => {
   // };
 
 
+  const classes = useStyles();
+
   return (
-    <div>
+    <div className={classes.root}>
 
       {/* <Accordion>
         <AccordionSummary
