@@ -101,10 +101,10 @@ const AboutPage = () => {
             <AccordionDetails>
               <Typography>
 
-              &#8226; Culfest&apos;20 - Champions <br />
-              &#8226; Ensemble Valhalla&apos;19 - Champions <br />
-              &#8226; We had participated in various events and fashion shows organized by IIT Guwahati, IIT Kharagpur, NIT Jamshedpur, NIT Rourkela, Xavier School of Management and Tata Steel from 2011-2020.<br />
-              &#8226; Tanishq&apos;s 2020 Valentine&apos;s collection was directed and shot by Invicta. <br />
+              Culfest&apos;20 - Champions <br />
+               Ensemble Valhalla&apos;19 - Champions <br />
+              We had participated in various events and fashion shows organized by IIT Guwahati, IIT Kharagpur, NIT Jamshedpur, NIT Rourkela, Xavier School of Management and Tata Steel from 2011-2020.<br />
+              Tanishq&apos;s 2020 Valentine&apos;s collection was directed and shot by Invicta. <br />
 
               </Typography>
             </AccordionDetails>
