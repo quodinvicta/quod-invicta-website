@@ -17,7 +17,7 @@ const Home = () => {
       <h1 className={styles.title}>The Official Fashion Club Of NIT Jamshedpur</h1>
 
       <p className={styles.desc}>
-        “Quod Invicta, NIT Jamshedpur’s Official Fashion Club, is a hub of creativity and style. It’s where fashion meets passion, and diversity is celebrated. Inspiring personal style, one event at a time!”
+        “Quod Invicta, NIT Jamshedpur&apos;s Official Fashion Club, is a hub of creativity and style. It&apos;s where fashion meets passion, and diversity is celebrated. Inspiring personal style, one event at a time!”
       </p>
       <div className={styles.buttons}>
         <Link href="/about"> <button className={styles.button}>Learn More</button> </Link>
