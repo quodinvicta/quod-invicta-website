@@ -2,6 +2,7 @@
 import React from 'react'
 import styles from "./cta.module.css"
 import Link from 'next/link'
+
 const CTA = () => {
   return (
     <div className={styles.container} >

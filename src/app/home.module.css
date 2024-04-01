@@ -12,14 +12,24 @@
 
 
 
-.title{
-    font-size: 70px;
-}
 
 
+.title {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 65px;
+  }
 
 
 .desc{
+    font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
     font-size: 20px;
 }
 
@@ -34,8 +44,15 @@
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: medium;
+
+    font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 .button:first-child{

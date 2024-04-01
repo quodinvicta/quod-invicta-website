@@ -121,7 +121,9 @@ const PhotoGallery = () => {
           </ModalGateway>
         </AccordionDetails>
       </Accordion> */}
-
+      <div className={styles.title}>
+        <h1>Chic Couture Collection</h1>
+      </div>
 
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}

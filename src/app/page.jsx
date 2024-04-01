@@ -6,8 +6,13 @@ import Carousel2 from '@/components/carousel/Carousel2'
 import Link from "next/link";
 import Testimonials from "@/components/testimonials/testimonials";
 import CTA from "@/components/cta/CTA";
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:wght@300;400;700&display=swap')
+</style>
+
 const Home = () => {
-  return <div><div className={styles.container}>
+  return <div>
+  <div className={styles.container}>
     <div className={styles.textContainer}>
       <h1 className={styles.title}>The Official Fashion Club Of NIT Jamshedpur</h1>
 
