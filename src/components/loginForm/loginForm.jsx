@@ -19,10 +19,10 @@ const LoginForm = () => {
     
     return (
         <form className={styles.form} action={formAction}>
-            <input type="text" placeholder="Username" name="username"></input>
-            
-            <input type="password" placeholder="Password" name="password"></input>
-            
+            {/* <input type="text" placeholder="Username" name="username"></input> */}
+            <TextField  id="filled-basic" label="Username" name="username" variant="outlined" />
+            {/* <input type="password" placeholder="Password" name="password"></input> */}
+            <TextField type="password"  id="filled-basic" label="Password" name="username" variant="outlined" />
             <button>Login</button>
             {state?.error}
             <Link href="/register">
