@@ -17,6 +17,7 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import WSPGallery from "@/components/WSPGallery/WSPGallery";
 import { makeStyles } from "@material-ui/core/styles";
+import {culfest23} from "./culfest23"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -120,6 +121,20 @@ const PhotoGallery = () => {
           </ModalGateway>
         </AccordionDetails>
       </Accordion> */}
+
+
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1-content"
+          id="panel1-header"><h1>Culfest&apos;23</h1></AccordionSummary>
+        <AccordionDetails>
+        <WSPGallery
+        galleryImages={culfest23}
+      />
+        </AccordionDetails>
+      </Accordion>
+
+
 
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}
