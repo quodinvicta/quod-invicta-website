@@ -11,6 +11,7 @@ import CTA from "@/components/cta/CTA";
 const Home = () => {
   return <div>
   <div className={styles.container}>
+  
     <div className={styles.textContainer}>
       <h1 className={styles.title}>The Official Fashion Club Of NIT Jamshedpur</h1>
 
@@ -25,6 +26,7 @@ const Home = () => {
        <Link href="https://linktr.ee/quodinvicta"> <Image src="/brands2.png" alt="brands" fill className={styles.brandImg} /> </Link>
       </div>
     </div>
+
     <div className={styles.imgContainer}>
       <Image src="/hero3.png" alt="hero" fill className={styles.heroImg} />
     </div>

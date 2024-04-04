@@ -116,3 +116,38 @@
 .achievements{
     flex: 2;
 }
+
+.title{
+  text-align: center;
+  margin: 10px;
+  padding-bottom: 20px;
+  font-size: large;
+}
+.cards{
+  display: flex;
+  
+  flex-direction: row;
+  gap: 20px;
+}
+
+
+
+
+@media screen and (max-width: 900px) {
+.cards{
+  flex-direction: column;
+}
+}
+
+@media screen and (max-width: 600px) {
+  .cards{
+    flex-direction: column;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .cards{
+    flex-direction: column;
+  }
+}

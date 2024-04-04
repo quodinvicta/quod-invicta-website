@@ -11,6 +11,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
+import ColouredLine from "@/components/colouredLine/colouredLine";
 
 export const metadata = {
   title: {
@@ -53,7 +54,7 @@ const AboutPage = () => {
             alt="green iguana"
           />
           <CardContent>
-            
+
             <Typography variant="body2" color="text.secondary">
               Culfest 2023
             </Typography>
@@ -101,10 +102,10 @@ const AboutPage = () => {
             <AccordionDetails>
               <Typography>
 
-              Culfest&apos;20 - Champions <br />
-               Ensemble Valhalla&apos;19 - Champions <br />
-              We had participated in various events and fashion shows organized by IIT Guwahati, IIT Kharagpur, NIT Jamshedpur, NIT Rourkela, Xavier School of Management and Tata Steel from 2011-2020.<br />
-              Tanishq&apos;s 2020 Valentine&apos;s collection was directed and shot by Invicta. <br />
+                Culfest&apos;20 - Champions <br />
+                Ensemble Valhalla&apos;19 - Champions <br />
+                We had participated in various events and fashion shows organized by IIT Guwahati, IIT Kharagpur, NIT Jamshedpur, NIT Rourkela, Xavier School of Management and Tata Steel from 2011-2020.<br />
+                Tanishq&apos;s 2020 Valentine&apos;s collection was directed and shot by Invicta. <br />
 
               </Typography>
             </AccordionDetails>
@@ -112,6 +113,126 @@ const AboutPage = () => {
         </div>
 
       </div>
+
+
+      {/* About The Team */}
+
+      <div className={styles.title}>
+        <h1>The Team</h1>
+        <br />
+        <h3>Core Members</h3>
+      </div>
+
+      <div className={styles.cards}>
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="180"
+
+              image="/noimage.png"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Brishti
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Captain
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="180"
+
+              image="/noimage.png"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Rajiv
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Captain
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="180"
+              
+              image="/diya.jpg"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Diya
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Vice - Captain
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="180"
+
+              image="/noimage.png"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Shikha
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Vice - Captain
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+
+
+        
+      </div>
+      <br />
+        <div className={styles.title}>
+          <h1>Meet The Developers</h1>
+        </div>
+        <div className={styles.cards}>
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="180"
+              
+
+              image="/ashish.jpg"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Ashish
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Web - Developer
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+        </div>
     </div>
   )
 }
