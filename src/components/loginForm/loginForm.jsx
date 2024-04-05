@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 const LoginForm = () => {
 
     const [state, formAction] = useFormState(login, undefined);
@@ -16,18 +17,25 @@ const LoginForm = () => {
     // useEffect(()=>{
     //     state?.success && router.push('/login')
     // },[state?.success,router]);
-    
+
     return (
         <form className={styles.form} action={formAction}>
             <input type="text" placeholder="Username" name="username"></input>
-           
+
             <input type="password" placeholder="Password" name="password"></input>
-           
+
+            
             <button>Login</button>
             {state?.error}
-            <Link href="/register">
-                {"Don't have an account?"} <b>Register</b>
-            </Link>
+            {"Don't Have an Account?"}
+            {/* <Link href="/register"> */}
+                {/* <button><b>Register</b></button> */}
+                <Button href="/register" size="medium" variant="contained" color="success">
+                    Register
+                </Button>
+            {/* </Link> */}
+
+
         </form>
     )
 }

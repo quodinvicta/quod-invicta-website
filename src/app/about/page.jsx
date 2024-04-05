@@ -130,7 +130,7 @@ const AboutPage = () => {
               component="img"
               height="180"
 
-              image="/noimage.png"
+              image="/brishti.png"
               alt="green iguana"
             />
             <CardContent>
@@ -150,7 +150,7 @@ const AboutPage = () => {
               component="img"
               height="180"
 
-              image="/noimage.png"
+              image="/rajiv.jpg"
               alt="green iguana"
             />
             <CardContent>
@@ -190,7 +190,7 @@ const AboutPage = () => {
               component="img"
               height="180"
 
-              image="/noimage.png"
+              image="/shikha.jpg"
               alt="green iguana"
             />
             <CardContent>
@@ -227,7 +227,7 @@ const AboutPage = () => {
                 Ashish
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Web - Developer
+                Web Developer
               </Typography>
             </CardContent>
           </CardActionArea>

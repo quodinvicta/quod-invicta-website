@@ -5,17 +5,17 @@ import { useFormState } from "react-dom";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-
+import Button from '@mui/material/Button';
 const RegisterForm = () => {
 
     const [state, formAction] = useFormState(register, undefined);
 
     const router = useRouter()
 
-    useEffect(()=>{
+    useEffect(() => {
         state?.success && router.push('/login')
-    },[state?.success,router]);
-    
+    }, [state?.success, router]);
+
     return (
         <form className={styles.form} action={formAction}>
             <input type="text" placeholder="Username" name="username"></input>
@@ -24,9 +24,13 @@ const RegisterForm = () => {
             <input type="password" placeholder="Confirm Password" name="passwordRepeat"></input>
             <button>Register</button>
             {state?.error}
-            <Link href="/login">
+            Have an Account?
+            <Button href="/login" size="medium" variant="contained" color="success">
+                Login
+            </Button>
+            {/* <Link href="/login">
                 Have an account? <b>Login</b>
-            </Link>
+            </Link> */}
         </form>
     )
 }

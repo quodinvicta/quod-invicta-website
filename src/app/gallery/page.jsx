@@ -128,7 +128,7 @@ const PhotoGallery = () => {
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1-content"
-          id="panel1-header"><h1>Culfest&apos;23</h1></AccordionSummary>
+          id="panel1-header"><h1>Culfest &apos;23</h1></AccordionSummary>
         <AccordionDetails>
         <WSPGallery
         galleryImages={culfest23}

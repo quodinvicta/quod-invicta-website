@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./contact.module.css";
-
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
 export const metadata = {
   title: {
     default: "Contact Page",
@@ -23,7 +24,8 @@ const ContactPage = () => {
           <input type="email" name="E-Mail" placeholder="Email Address"></input>
           <input type="text" name="Phone Number" placeholder="Phone Number"></input>
           <textarea name="Message" id="" cols="30" rows="10" type="text" placeholder="Message"></textarea>
-          <button type="submit">Send</button>
+          <Button type="submit" variant="contained" endIcon={<SendIcon />}>Send</Button>
+          {/* <button type="submit">Send</button> */}
         </form> 
       </div>
     </div>
