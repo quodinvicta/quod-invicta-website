@@ -171,7 +171,7 @@ const Card1 = () => (
           Syed Ateeb
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Some people call it a team, and some say it's a club. For me, it's an enjoyable collective to be around with whom I've become so accustomed. All the very best to Quod Invicta❤️.
+          Some people call it a team, and some say it&apos;s a club. For me, it&apos;s an enjoyable collective to be around with whom I&apos;ve become so accustomed. All the very best to Quod Invicta❤️.
         </Typography>
         <Typography variant="subtitle1" >
           Batch of 2024
@@ -217,7 +217,7 @@ const Card3 = () => (
           Rajiv Ranjan
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Being part of this team feels like being part of a family. Together, we've tackled numerous events, showcasing our collective skills. Our team gatherings, including the parties, have been filled with laughter and joy . I'm grateful for the love and respect shown by each member of this team. It's the  support that makes our experiences together truly special. Thank you all for making every moment memorable and enjoyable.
+          Being part of this team feels like being part of a family. Together, we&apos;ve tackled numerous events, showcasing our collective skills. Our team gatherings, including the parties, have been filled with laughter and joy . I&apos;m grateful for the love and respect shown by each member of this team. It&apos;s the  support that makes our experiences together truly special. Thank you all for making every moment memorable and enjoyable.
         </Typography>
         <Typography variant="subtitle1" >
           Batch of 2024
@@ -240,7 +240,7 @@ const Card4 = () => (
           Nilesh Kumar
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          "Invicta, the fashion club at NIT Jamshedpur, is a dynamic space where style meets innovation. Through captivating events, workshops, and collaborations, it cultivates a vibrant community of fashion enthusiasts. As a member, I've unlocked my creativity, formed meaningful connections, and embraced the boundless potential of fashion at NIT JSR."
+          Invicta, the fashion club at NIT Jamshedpur, is a dynamic space where style meets innovation. Through captivating events, workshops, and collaborations, it cultivates a vibrant community of fashion enthusiasts. As a member, I&apos;ve unlocked my creativity, formed meaningful connections, and embraced the boundless potential of fashion at NIT JSR.
         </Typography>
         <Typography variant="subtitle1" >
           Batch of 2023
