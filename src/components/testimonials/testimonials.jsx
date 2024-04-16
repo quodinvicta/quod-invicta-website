@@ -111,7 +111,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import styles from "./testimonials.module.css"
 // import Swiper core and required modules
-import { Autoplay,Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -157,27 +157,98 @@ import 'swiper/css/autoplay';
 //     </CardContent>
 //   </CardContainer>
 // );
-const Card2 = () => (
+const Card1 = () => (
   <Card sx={{ maxWidth: 345 }}>
     <CardActionArea>
       <CardMedia
         component="img"
-        height="140"
-        image="https://via.placeholder.com/300x200"
+        height="250"
+        image="https://i.imgur.com/ahOh64S.jpeg"
         alt="green iguana"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-        Lorem ipsum
+          Syed Ateeb
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Some people call it a team, and some say it's a club. For me, it's an enjoyable collective to be around with whom I've become so accustomed. All the very best to Quod Invicta❤️.
+        </Typography>
+        <Typography variant="subtitle1" >
+          Batch of 2024
         </Typography>
       </CardContent>
     </CardActionArea>
   </Card>
 );
-
+const Card2 = () => (
+  <Card sx={{ maxWidth: 345 }}>
+    <CardActionArea>
+      <CardMedia
+        component="img"
+        height="250"
+        image="https://i.imgur.com/7FYxmNy.jpeg"
+        alt="green iguana"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Ayush Jaiswal
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          The place where everyone is like family.
+        </Typography>
+        <Typography variant="subtitle1" >
+          Batch of 2023
+        </Typography>
+      </CardContent>
+    </CardActionArea>
+  </Card>
+);
+const Card3 = () => (
+  <Card sx={{ maxWidth: 345 }}>
+    <CardActionArea>
+      <CardMedia
+        component="img"
+        height="250"
+        image="https://i.imgur.com/pGKa1AL.png"
+        alt="green iguana"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Rajiv Ranjan
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Being part of this team feels like being part of a family. Together, we've tackled numerous events, showcasing our collective skills. Our team gatherings, including the parties, have been filled with laughter and joy . I'm grateful for the love and respect shown by each member of this team. It's the  support that makes our experiences together truly special. Thank you all for making every moment memorable and enjoyable.
+        </Typography>
+        <Typography variant="subtitle1" >
+          Batch of 2024
+        </Typography>
+      </CardContent>
+    </CardActionArea>
+  </Card>
+);
+const Card4 = () => (
+  <Card sx={{ maxWidth: 345 }}>
+    <CardActionArea>
+      <CardMedia
+        component="img"
+        height="250"
+        image="https://i.imgur.com/riWKuqa.jpeg"
+        alt="green iguana"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Nilesh Kumar
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          "Invicta, the fashion club at NIT Jamshedpur, is a dynamic space where style meets innovation. Through captivating events, workshops, and collaborations, it cultivates a vibrant community of fashion enthusiasts. As a member, I've unlocked my creativity, formed meaningful connections, and embraced the boundless potential of fashion at NIT JSR."
+        </Typography>
+        <Typography variant="subtitle1" >
+          Batch of 2023
+        </Typography>
+      </CardContent>
+    </CardActionArea>
+  </Card>
+);
 const GradientMarquee = styled(Marquee)`
   
   ${'' /* padding: 10px; */}
@@ -198,11 +269,11 @@ const Testimonials = () => (
 
     <Swiper
       // install Swiper modules
-      modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
+      modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
       autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
       breakpoints={{
         380: {
           slidesPerView: 1,
@@ -237,13 +308,11 @@ const Testimonials = () => (
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
+      <SwiperSlide><Card1 /></SwiperSlide>
       <SwiperSlide><Card2 /></SwiperSlide>
-      <SwiperSlide><Card2 /></SwiperSlide>
-      <SwiperSlide><Card2 /></SwiperSlide>
-      <SwiperSlide><Card2 /></SwiperSlide>
-      <SwiperSlide><Card2 /></SwiperSlide>
-      <SwiperSlide><Card2 /></SwiperSlide>
-      <SwiperSlide><Card2 /></SwiperSlide>
+      <SwiperSlide><Card3 /></SwiperSlide>
+      <SwiperSlide><Card4 /></SwiperSlide>
+
     </Swiper>
 
   </div>
