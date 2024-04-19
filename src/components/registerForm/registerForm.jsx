@@ -4,6 +4,7 @@ import styles from "./registerForm.module.css";
 import { useFormState } from "react-dom";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Alert from '@mui/material/Alert';
 import Link from "next/link";
 import Button from '@mui/material/Button';
 const RegisterForm = () => {
@@ -23,8 +24,13 @@ const RegisterForm = () => {
             <input type="password" placeholder="Password" name="password"></input>
             <input type="password" placeholder="Confirm Password" name="passwordRepeat"></input>
             <button>Register</button>
-            {state?.error}
+            {(state?.error) && 
+                (<Alert variant="filled" severity="error">{state?.error}</Alert>)
+            }
+            <div>
+            <br></br>
             Have an Account?
+            </div>
             <Button href="/login" size="medium" variant="contained" color="success">
                 Login
             </Button>

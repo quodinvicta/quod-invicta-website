@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import Alert from '@mui/material/Alert';
 import Button from '@mui/material/Button';
 const LoginForm = () => {
 
@@ -26,8 +27,13 @@ const LoginForm = () => {
 
             
             <button>Login</button>
-            {state?.error}
+            {(state?.error) && 
+                (<Alert variant="filled" severity="error">{state?.error}</Alert>)
+            }
+            <div>
+            <br></br>
             {"Don't Have an Account?"}
+            </div>
             {/* <Link href="/register"> */}
                 {/* <button><b>Register</b></button> */}
                 <Button href="/register" size="medium" variant="contained" color="success">

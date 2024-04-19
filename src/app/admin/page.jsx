@@ -6,6 +6,15 @@ import AdminUsers from "@/components/adminUsers/adminUsers";
 import AdminUserForm from "@/components/adminUserForm/adminUserForm";
 import { auth } from "@/lib/auth";
 
+export const metadata = {
+  title: {
+    default: "Admin Page",
+    template: "%s | Quod Invicta"
+  },
+  description: 'The Official Webpage for Quod Invicta',
+}
+
+
 const AdminPage = async () => {
 
   const session = await auth();

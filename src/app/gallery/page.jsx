@@ -19,6 +19,15 @@ import WSPGallery from "@/components/WSPGallery/WSPGallery";
 import { makeStyles } from "@material-ui/core/styles";
 import {culfest23} from "./culfest23"
 
+const metadata = {
+  title: {
+    default: "Gallery",
+    template: "%s | Quod Invicta"
+  },
+  description: 'The Official Webpage for Quod Invicta',
+}
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
