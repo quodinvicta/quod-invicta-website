@@ -103,7 +103,7 @@
 
 @media (max-width: 768px){
     .title{
-        font-size: 64px;
+        font-size: 48px;
     }
     
     .container{
@@ -116,7 +116,20 @@
 
 @media (max-width: 400px){
     .title{
-        font-size: 56px;
+        font-size: 48px;
+        text-align: center;
+    }
+    .container{
+        flex-direction: column;
+    }
+    
+    
+}
+
+
+@media (max-width: 300px){
+    .title{
+        font-size: 42px;
         text-align: center;
     }
     .container{
