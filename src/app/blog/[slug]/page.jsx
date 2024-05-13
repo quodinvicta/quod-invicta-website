@@ -37,7 +37,7 @@ const SinglePostPage = async ({ params }) => {
     <div className={styles.container} >
     
       {post.img && (<div className={styles.imgContainer}>
-        <Image className={styles.img} src={post.img} alt="" width={500} height={500}></Image>
+        <img className={styles.img} src={post.img} alt=""  ></img>
       </div>)}
       <div className={styles.textConatiner}>
         <h1 className={styles.title}>{post.title}</h1>
@@ -52,8 +52,9 @@ const SinglePostPage = async ({ params }) => {
             <span className={styles.detailTitle}>Published</span>
             <span className={styles.detailValue}>
             {/* {post.createdAt.toString().slice(4, 16)} */}
-            
-            {date.format("DD-MM-YYYY, hh:mm:ss A")}
+             
+
+            {date.zone("+05:30").format("DD-MM-YYYY, hh:mm:ss A")}
             </span>
           </div>
         </div>

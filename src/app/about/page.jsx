@@ -130,46 +130,6 @@ const AboutPage = () => {
               component="img"
               height="180"
 
-              image="/brishti.png"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Brishti
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Captain
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-
-        <Card>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="180"
-
-              image="/rajiv.jpg"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Rajiv
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Captain
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-
-        <Card>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="180"
-              
               image="/diya.jpg"
               alt="green iguana"
             />
@@ -178,7 +138,7 @@ const AboutPage = () => {
                 Diya
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Vice - Captain
+                Captain
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -196,6 +156,46 @@ const AboutPage = () => {
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 Shikha
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Team Manager
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="180"
+              
+              image="/lavish.jpg"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Lavish
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Vice - Captain
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="180"
+
+              image="/kaushiki.jpg"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Kaushiki
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Vice - Captain
