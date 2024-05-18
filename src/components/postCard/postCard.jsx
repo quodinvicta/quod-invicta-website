@@ -7,6 +7,15 @@ const PostCard = ({ post }) => {
 
 
   const date = moment(post.createdAt);
+  
+
+function truncateString(str, maxLength) { 
+  if (str.length > maxLength) { 
+      return str.slice(0, maxLength - 3) + '...'; 
+  } 
+  return str; 
+} 
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -20,7 +29,8 @@ const PostCard = ({ post }) => {
       </div>
       <div className={styles.bottom}>
         <h1 classname={styles.title}>{post.title}</h1>
-        <p className={styles.desc}>{post.desc}</p>
+        
+        <p className={styles.desc}>{truncateString(post.desc, 35)}</p>
         {/* <Link className={styles.link} href={`/blog/${post.slug}`}>Read More</Link> */}
         <Button variant="contained" href={`/blog/${post.slug}`}>
           Read More
