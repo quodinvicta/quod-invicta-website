@@ -15,7 +15,7 @@ const ContactPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-        <Image src="/contact.jpg" alt="" fill className={styles.img}/>
+        <img src="/contact.jpg" alt=""  className={styles.img}/>
       </div>
       <div className={styles.formContainer}>
         <form action="mailto:invicta.nit.jsr@gmail.com" method="post" enctype="text/plain" 
