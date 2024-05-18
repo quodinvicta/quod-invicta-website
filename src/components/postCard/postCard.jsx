@@ -24,7 +24,7 @@ function truncateString(str, maxLength) {
         </div>}
         <span className={styles.date}>
           {/* {post.createdAt.toString().slice(4, 16)} */}
-          {date.format("DD-MM-YYYY, hh:mm:ss A")}
+          {date.zone("+05:30").format("DD-MM-YYYY, hh:mm:ss A")}
         </span>
       </div>
       <div className={styles.bottom}>
