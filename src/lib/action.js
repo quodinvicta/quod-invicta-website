@@ -9,10 +9,6 @@ import bcrypt from "bcryptjs";
 
 export const addPost = async (prevState,formData) => {
 
-    // const title = formData.get('title');
-    // const desc = formData.get('desc');
-    // const slug = formData.get('slug');
-    // const userId = formData.get('userId');
 
     const { title, desc, slug, userId,img} = Object.fromEntries(formData);
 

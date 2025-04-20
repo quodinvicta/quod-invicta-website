@@ -1,5 +1,4 @@
 .footer {
-    background-color: #1F2544;
     color: white;
     padding: 150px 0 0 0;
     position: relative;
@@ -66,7 +65,7 @@
 }
 
 .link {
-    color: #63b3ed;
+    color: #88b2d0;
     margin-bottom: 8px;
     text-decoration: none;
 }

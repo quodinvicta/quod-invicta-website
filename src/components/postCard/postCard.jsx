@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./postCard.module.css";
-import Link from "next/link";
+
 import moment from 'moment';
 import { Button } from "@mui/material";
 const PostCard = ({ post }) => {

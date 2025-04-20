@@ -1,24 +1,104 @@
+
+.formContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.bgCircle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(100, 100, 100, 0.2) 0%, rgba(30, 30, 30, 0) 70%);
+}
+
+.formWrapper {
+  background-color: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(45deg, #333, #555);
+  border-radius: 50%;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
 .form {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
+  width: 100%;
 }
 
-.form input {
-    padding: 20px;
-    background-color: var(--bg);
-    color: var(--text);
-    border: none;
-    border-radius: 5px;
+.loginButton:after,
+.registerButton:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+  top: -80px;
+  left: -100px;
+  transition: all 0.6s ease;
 }
 
-.form button {
-    padding: 20px;
-    cursor: pointer;
-    background-color: var(--btn);
-    color: var(--text);
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
+.loginButton:hover:after,
+.registerButton:hover:after {
+  left: 120%;
+}
+
+.buttonEffect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+  transform: scale(0);
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.loginButton:active .buttonEffect,
+.registerButton:active .buttonEffect {
+  transform: scale(3);
+  opacity: 1;
+  transition: 0s;
+}
+
+.registerContainer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }

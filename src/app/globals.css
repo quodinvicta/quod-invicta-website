@@ -7,13 +7,11 @@
   font-weight: 500;
   font-style: normal;
 }
-:root{
-    --bg: #1F2544;
-    --bgSoft: #474F7A;
-    --text: #FFFFFF;
+:root {
+    --bgSoft: #2c2d36;
     --textSoft: #FFD0EC;
     --btn: #81689D;
-}
+  }
 
 *{
     margin: 0;
@@ -21,8 +19,8 @@
     box-sizing: border-box;
 }
 body{
-    background-color: var(--bg);
-    color: var(--text);
+    background: linear-gradient(135deg, #0f0f0f, #282525);
+    color: white;
 }
 
 a{
