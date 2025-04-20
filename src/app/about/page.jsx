@@ -1,240 +1,236 @@
+"use client";
+import styles from "./about.module.css";
+import * as React from "react";
+import { useEffect, useRef, useState } from "react";
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Typography,
+  Card,
+  CardContent,
+  CardMedia,
+  CardActionArea,
+  Grid,
+  Box,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { motion, useInView } from "framer-motion";
 
-import Image from "next/image"
-import styles from "./about.module.css"
-import * as React from 'react';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import { CardActionArea } from '@mui/material';
-import ColouredLine from "@/components/colouredLine/colouredLine";
+const MotionCard = motion(Card);
 
-export const metadata = {
-  title: {
-    default: "About Page",
-    template: "%s | Quod Invicta"
-  },
-  description: 'The Official Webpage for Quod Invicta',
-}
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.2, duration: 0.6 },
+  }),
+};
 
-
-const AboutPage = () => {
-
+const TeamCard = ({ name, role, image, index }) => {
+  const fallbackImage = "https://via.placeholder.com/300x180?text=No+Image";
 
   return (
-    <div className={styles.container}>
-      {/* <div className={styles.imgContainer}>
-        <Image src="/about.png" alt="About Image" fill />
-      </div> */}
-      {/* <h1 className={styles.subtitle}>About The Team</h1>
-      <div className={styles.textContainer}>
-          Quod Invicta was founded in 2011 and was named as Invincibles and was rebranded in 2017 as Quod Invicta, Invicta is &apos;Invincibles&apos; in Latin to keep the history of the team. Our main objective is to make clothing more of a lifestyle than something that is used to cover one&apos;s body through engineering and collaborating with brands to create an awareness of sustainable clothing.
-      </div>
-      <h1 className={styles.subtitle}>Achievements</h1>
-      <div >
-        <ul className={styles.achievements}>
-            <li>Culfest&apos;20 - Champions</li>
-            <li>Ensemble Valhalla&apos;19 - Champions </li>
-            <li>We had participated in various events and fashion shows organized by IIT Guwahati, IIT Kharagpur, NIT Jamshedpur, NIT Rourkela, Xavier School of Management and Tata Steel from 2011-2020.</li>
-            <li>Tanishq&apos;s 2020 Valentine&apos;s collection was directed and shot by Invicta.</li>
-        </ul>
-      </div> */}
+    <MotionCard
+      custom={index}
+      variants={fadeInUp}
+      initial="hidden"
+      animate="visible"
+      whileHover={{
+        scale: 1.05,
+        rotate: 1,
+        boxShadow: "0px 12px 24px rgba(0,0,0,0.4)",
+        transition: { duration: 0.3 },
+      }}
+      sx={{
+        backgroundColor: "#1e1e1e",
+        color: "#fff",
+        height: "100%",
+        "& .MuiCardContent-root": {
+          backgroundColor: "#1e1e1e",
+        },
+      }}
+    >
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="180"
+          image={image || fallbackImage}
+          alt={`${name}, ${role}`}
+          sx={{
+            filter: "brightness(0.9)",
+            transition: "filter 0.3s ease",
+            "&:hover": {
+              filter: "brightness(1.1)",
+            },
+          }}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div" sx={{ color: "#fff" }}>
+            {name}
+          </Typography>
+          <Typography variant="body2" sx={{ color: "#bbb" }}>
+            {role}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </MotionCard>
+  );
+};
 
+const RevealOnScroll = ({ children }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
 
-      <Card className={styles.imgContainer} sx={{ maxWidth: 1080 }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            // height="704"
-            image="/about.png"
-            alt="green iguana"
-          />
-          <CardContent>
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
-            <Typography variant="body2" color="text.secondary">
-              Culfest 2023
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
+const AboutPage = () => {
+  const [hasMounted, setHasMounted] = useState(false);
 
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
+  if (!hasMounted) return null;
 
+  return (
+    <motion.div
+      className={styles.container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <RevealOnScroll>
+        <Card
+          className={`${styles.imgContainer}`}
+          sx={{
+            maxWidth: 1080,
+            margin: "0 auto",
+            backgroundColor: "#121212",
+            boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.5)",
+            overflow: "hidden",
+          }}
+        >
+          <CardActionArea>
+            <motion.div whileHover={{ scale: 1.05 }}>
+              <CardMedia component="img" image="/about.png" alt="Culfest 2023" />
+            </motion.div>
+            <CardContent sx={{ backgroundColor: "#121212", color: "#fff" }}>
+              <Typography variant="body2" sx={{ color: "#bbb" }}>
+                Culfest 2023
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+      </RevealOnScroll>
 
-      <div className={styles.accordion}>
-
-        <div className={styles.about}>
-
-
-
-          <Accordion defaultExpanded >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1-content"
-              id="panel1-header"
+      <RevealOnScroll>
+        <Box className={styles.accordion} mt={4}>
+          {[{
+            title: "About The Team",
+            content:
+              "Quod Invicta was founded in 2011 and was named as Invincibles and was rebranded in 2017 as Quod Invicta. Invicta means 'Invincibles' in Latin, preserving the team's legacy. Our mission is to make fashion a lifestyle by engineering designs and collaborating with brands to promote sustainable clothing."
+          },
+          {
+            title: "Achievements",
+            content: (
+              <ul style={{ paddingLeft: "1.2rem", margin: 0 }}>
+                <li>Runner-Up of Spring Fest '25 - IIT Kharagpur</li>
+                <li>3rd Position in Culfest '25</li>
+                <li>Winner of Culfest '24</li>
+                <li>Culfest '20 - Champions</li>
+                <li>Ensemble Valhalla '19 - Champions</li>
+                <li>Participated in shows by IITs, NITs, XLRI, Tata Steel</li>
+                <li>Directed & shot Tanishq's 2020 Valentine's collection</li>
+              </ul>
+            )
+          }].map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
             >
-              <Typography>About The Team</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
-                Quod Invicta was founded in 2011 and was named as Invincibles and was rebranded in 2017 as Quod Invicta, Invicta is &apos;Invincibles&apos; in Latin to keep the history of the team. Our main objective is to make clothing more of a lifestyle than something that is used to cover one&apos;s body through engineering and collaborating with brands to create an awareness of sustainable clothing.
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
+              <Accordion
+                defaultExpanded={idx === 0}
+                sx={{
+                  backgroundColor: "#1e1e1e",
+                  color: "#fff",
+                  marginBottom: "8px",
+                  boxShadow: "0px 3px 8px rgba(0,0,0,0.3)",
+                  "& .MuiAccordionSummary-root": {
+                    backgroundColor: "#262626",
+                  },
+                }}
+              >
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
+                  aria-controls={`panel${idx}-content`}
+                  id={`panel${idx}-header`}
+                >
+                  <Typography sx={{ fontWeight: 500 }}>{item.title}</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography sx={{ color: "#ddd", lineHeight: 1.7 }}>{item.content}</Typography>
+                </AccordionDetails>
+              </Accordion>
+            </motion.div>
+          ))}
+        </Box>
+      </RevealOnScroll>
 
-        </div>
+      <RevealOnScroll>
+        <Box className={styles.title} mt={6} mb={2}>
+          <Typography variant="h3" sx={{ color: "#fff", textAlign: "center" }}>The Team</Typography>
+          <Typography variant="h5" sx={{ color: "#ccc", textAlign: "center" }}>Core Members</Typography>
+        </Box>
+      </RevealOnScroll>
 
-        <div className={styles.achievements}>
+      <Grid container spacing={3} justifyContent="center">
+        {[
+          { name: "Diya", role: "Captain", image: "/diya.jpg" },
+          { name: "Shikha", role: "Team Manager", image: "/shikha.jpg" },
+          { name: "Lavish", role: "Vice-Captain", image: "/lavish.jpg" },
+          { name: "Kaushiki", role: "Vice-Captain", image: "/kaushiki.jpg" },
+        ].map((member, index) => (
+          <Grid item xs={12} sm={6} md={3} key={member.name}>
+            <TeamCard {...member} index={index} />
+          </Grid>
+        ))}
+      </Grid>
 
+      <RevealOnScroll>
+        <Box className={styles.title} mt={6} mb={2}>
+          <Typography variant="h3" sx={{ color: "#fff", textAlign: "center" }}>
+            Meet The Developers
+          </Typography>
+        </Box>
+      </RevealOnScroll>
 
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel2-content"
-              id="panel2-header"
-            >
-              <Typography>Achievements</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>
+      <Grid container spacing={3} justifyContent="center">
+        {[
+          { name: "Ashish", role: "Web Developer", image: "/ashish.jpg" },
+          { name: "Srijan Swapnil", role: "Web Developer", image: "/srijan.jpg" },
+        ].map((member, index) => (
+          <Grid item xs={12} sm={6} md={3} key={member.name}>
+            <TeamCard {...member} index={index} />
+          </Grid>
+        ))}
+      </Grid>
+    </motion.div>
+  );
+};
 
-                Culfest&apos;20 - Champions <br />
-                Ensemble Valhalla&apos;19 - Champions <br />
-                We had participated in various events and fashion shows organized by IIT Guwahati, IIT Kharagpur, NIT Jamshedpur, NIT Rourkela, Xavier School of Management and Tata Steel from 2011-2020.<br />
-                Tanishq&apos;s 2020 Valentine&apos;s collection was directed and shot by Invicta. <br />
-
-              </Typography>
-            </AccordionDetails>
-          </Accordion>
-        </div>
-
-      </div>
-
-
-      {/* About The Team */}
-
-      <div className={styles.title}>
-        <h1>The Team</h1>
-        <br />
-        <h3>Core Members</h3>
-      </div>
-
-      <div className={styles.cards}>
-        <Card>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="180"
-
-              image="/diya.jpg"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Diya
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Captain
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-
-        <Card>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="180"
-
-              image="/shikha.jpg"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Shikha
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Team Manager
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-
-        <Card>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="180"
-              
-              image="/lavish.jpg"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lavish
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Vice - Captain
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-
-        <Card>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="180"
-
-              image="/kaushiki.jpg"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Kaushiki
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Vice - Captain
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-
-
-        
-      </div>
-      <br />
-        <div className={styles.title}>
-          <h1>Meet The Developers</h1>
-        </div>
-        <div className={styles.cards}>
-        <Card>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="180"
-              
-
-              image="/ashish.jpg"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Ashish
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Web Developer
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        </div>
-    </div>
-  )
-}
-
-export default AboutPage
+export default AboutPage;

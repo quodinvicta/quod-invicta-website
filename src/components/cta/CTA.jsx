@@ -1,41 +1,132 @@
-"use client"
-import React from 'react'
-import styles from "./cta.module.css"
-import Link from 'next/link'
-import { Button } from '@mui/material'
+"use client";
+
+import React, { useEffect, useRef } from 'react';
+import styles from './cta.module.css';
+import { Button, Typography, Box } from '@mui/material';
+import { motion, useInView, useAnimation } from 'framer-motion';
+
+const MotionTypography = motion(Typography);
+const MotionButton = motion(Button);
+const MotionBox = motion(Box);
 
 const CTA = () => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  
+  useEffect(() => {
+    if (isInView) {
+      controls.start('visible');
+    }
+  }, [controls, isInView]);
+  
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+        duration: 0.6
+      }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+  
+  const videoVariants = {
+    hidden: { scale: 0.95, opacity: 0 },
+    visible: { 
+      scale: 1, 
+      opacity: 1,
+      transition: { 
+        duration: 0.8, 
+        ease: "easeOut",
+        delay: 0.4
+      }
+    }
+  };
+  
   return (
-    <div className={styles.container} >
-
-      <div className={styles.info}>
-        <div className={styles.title}>
-          <h1>Team Quod Invicta’s Behind-The-Scenes Video: a snapshot of fashion’s flair and unity at NIT Jamshedpur.</h1>
-        </div>
-        <div className={styles.btnGroup}>
-          {/* <button onClick="/register" className={styles.btn}>Register</button> */}
-          {/* <input  className={styles.btn} type="button" onclick="location.href='/register';" value="Register" /> */}
-          {/* <Link href="/register"> <button className={styles.btn}>Register</button> </Link> */}
-          <Button size="large" href="/register" variant="contained" color="success">
+    <motion.div 
+      className={styles.container}
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={containerVariants}
+    >
+      <motion.div 
+        className={styles.info}
+        variants={containerVariants}
+      >
+        <MotionTypography 
+          variant="h4" 
+          component="h1" 
+          className={styles.title}
+          variants={itemVariants}
+        >
+          Team Quod Invicta's Behind-The-Scenes Video: A snapshot of fashion's flair and unity at NIT Jamshedpur.
+        </MotionTypography>
+        
+        <motion.div 
+          className={styles.btnGroup}
+          variants={itemVariants}
+        >
+          <MotionButton
+            size="large"
+            href="/register"
+            variant="contained"
+            color="success"
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)" 
+            }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
             Register
-          </Button>
-        </div>
-      </div>
+          </MotionButton>
+        </motion.div>
+      </motion.div>
+      
+      <motion.div 
+        className={styles.videoContainer}
+        variants={videoVariants}
+      >
+        <MotionBox 
+          className={styles.iframeWrapper}
+          whileHover={{ 
+            scale: 1.02,
+            transition: { duration: 0.3 }
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className={styles.videoOverlay}
+          />
+          <iframe
+            src="https://www.youtube.com/embed/Wm311iK9KlE?si=uZOPAyCi1iUCbKb6"
+            title="Behind-The-Scenes Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            loading="lazy"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+          ></iframe>
+        </MotionBox>
+      </motion.div>
+    </motion.div>
+  );
+};
 
-      <div className={styles.videoContainer}>
-        <iframe
-          width="400"
-          height="315"
-          src="https://www.youtube.com/embed/Wm311iK9KlE?si=uZOPAyCi1iUCbKb6"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        ></iframe>
-      </div>
-
-    </div>
-  )
-}
-
-export default CTA
+export default CTA;
