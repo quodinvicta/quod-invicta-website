@@ -125,7 +125,7 @@ const TestimonialCard = ({ name, batch, img, quote }) => (
                 textShadow: "0 1px 4px rgba(0, 0, 0, 0.5)",
               }}
             >
-              "{quote || "Being part of this team feels like being part of a family."}"
+              {quote || "Being part of this team feels like being part of a family."}
             </Typography>
           </Box>
           {/* Name */}

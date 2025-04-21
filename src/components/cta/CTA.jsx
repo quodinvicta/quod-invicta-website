@@ -72,7 +72,7 @@ const CTA = () => {
           className={styles.title}
           variants={itemVariants}
         >
-          Team Quod Invicta's Behind-The-Scenes Video: A snapshot of fashion's flair and unity at NIT Jamshedpur.
+          Team Quod Invicta&apos;s Behind-The-Scenes Video: A snapshot of fashion&apos;s flair and unity at NIT Jamshedpur.
         </MotionTypography>
         
         <motion.div 

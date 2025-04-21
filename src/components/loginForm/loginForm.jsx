@@ -2,7 +2,7 @@
 import { login } from "@/lib/action";
 import styles from "./loginForm.module.css";
 import { useFormState } from "react-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import TextField from '@mui/material/TextField';
 import Alert from '@mui/material/Alert';
@@ -291,7 +291,7 @@ const LoginForm = () => {
                 textAlign: "center"
               }}
             >
-              Don't Have an Account?
+              Don&apos;t Have an Account?
             </Typography>
             
             <Button 
