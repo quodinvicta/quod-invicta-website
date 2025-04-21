@@ -1,7 +1,6 @@
-'use client'
+
 import PostCard from "@/components/postCard/postCard";
 import styles from "./blog.module.css";
-import { getPosts } from "@/lib/data";
 //FETCH DATA WITH API
 
 const getData = async () => {
@@ -13,7 +12,13 @@ const getData = async () => {
   return res.json();
 }
 
-
+export const metadata = {
+  title: {
+    default: "Blog Page",
+    template: "%s | Quod Invicta"
+  },
+  description: 'The Official Webpage for Quod Invicta',
+}
 
 
 const BlogPage = async () => {
