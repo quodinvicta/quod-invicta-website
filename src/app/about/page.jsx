@@ -140,19 +140,19 @@ const AboutPage = () => {
           {[{
             title: "About The Team",
             content:
-              "Quod Invicta was founded in 2011 and was named as Invincibles and was rebranded in 2017 as Quod Invicta. Invicta means 'Invincibles' in Latin, preserving the team's legacy. Our mission is to make fashion a lifestyle by engineering designs and collaborating with brands to promote sustainable clothing."
+              "Quod Invicta was founded in 2011 and was named as Invincibles and was rebranded in 2017 as Quod Invicta. Invicta means &apos;Invincibles&apos; in Latin, preserving the team&apos;s legacy. Our mission is to make fashion a lifestyle by engineering designs and collaborating with brands to promote sustainable clothing."
           },
           {
             title: "Achievements",
             content: (
               <ul style={{ paddingLeft: "1.2rem", margin: 0 }}>
-                <li>Runner-Up of Spring Fest '25 - IIT Kharagpur</li>
-                <li>3rd Position in Culfest '25</li>
-                <li>Winner of Culfest '24</li>
-                <li>Culfest '20 - Champions</li>
-                <li>Ensemble Valhalla '19 - Champions</li>
+                <li>Runner-Up of Spring Fest &apos;25 - IIT Kharagpur</li>
+                <li>3rd Position in Culfest &apos;25</li>
+                <li>Winner of Culfest &apos;24</li>
+                <li>Culfest &apos;20 - Champions</li>
+                <li>Ensemble Valhalla &apos;19 - Champions</li>
                 <li>Participated in shows by IITs, NITs, XLRI, Tata Steel</li>
-                <li>Directed & shot Tanishq's 2020 Valentine's collection</li>
+                <li>Directed & shot Tanishq&apos;s 2020 Valentine&apos;s collection</li>
               </ul>
             )
           }].map((item, idx) => (
