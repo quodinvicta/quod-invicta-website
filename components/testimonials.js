@@ -21,7 +21,7 @@ const testimonials = [
   {
     name: "Shikha Singh",
     quote:
-      "Quod Invicta has been more than just a fashion club it is been my family and my biggest confidence boost.Every moment as Team Manager was filled with passion, chaos, laughter, and growth.Forever Quod Invicta ✨",
+      "Quod Invicta has been more than just a fashion club it is been my family .Every moment  was filled with passion, laughter, and growth.Quod Invicta ✨",
     batch: "2025",
     Image: "New folder (2)/IMG-20250316-WA0044 - Shikha Singh.jpg",
   },
@@ -43,7 +43,7 @@ const testimonials = [
   {
     name: "Anjali Maurya",
     quote:
-      "Being a part of Quod Invicta has been one of the best parts of my college journey. I got the chance to perform in events like Culfest and CDS, and the feeling on stage was just amazing! What I’ll always cherish are those morning and evening practice sessions—full of energy, laughter, and teamwork.",
+      "Being a part of Quod Invicta has been one of the best parts of my college journey.I’ll always cherish those morning and evening practice sessions full of energy,laughter,teamwork.",
     batch: "2025",
     Image: "New folder (2)/IMG_20250424_134527 - ANJALI MAURYA.jpg",
   },
@@ -79,7 +79,7 @@ const testimonials = [
   {
     name: "Prince",
     quote:
-      "Quod Invicta is not just a club but a family. I got such beautiful memories that i can cherish forever, from harsh morning practices to proudly flaunting on stage,enjoy the togetherness and pass-on the lagacy of this team and yes always stay united guys bcs u people r the best❤️✨",
+      "Quod Invicta is not just a club but a family. I got such beautiful memories that i can cherish forever, from harsh morning practices to proudly flaunting on stage and yes always stay united guys bcs u people r the best❤️✨",
     batch: "2025",
     Image: "New folder (2)/IMG-20250225-WA0273 - Prince Kumar 19.jpg",
   },
