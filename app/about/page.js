@@ -268,7 +268,7 @@ const TeamSection = () => {
     {
       name: "Kanishka",
       role: "Vice-Captain & Operations Head",
-      image: "34b70f02-d00c-4b9a-9fa3-a4571acd3c4f.jpeg",
+      image: "kanishka.jpeg",
       description:
         "",
       skills: ["Strategic Planning", "Coordination"],
