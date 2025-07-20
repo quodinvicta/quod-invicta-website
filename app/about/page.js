@@ -13,7 +13,7 @@ const AboutPage = () => {
   if (!hasMounted) return null;
 
   return (
-    <div className="min-h-screen  text-white relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
       
       <Navbar/>
       {/* Animated Background */}
